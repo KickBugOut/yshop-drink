@@ -25,22 +25,7 @@
             </router-link>
           </el-card>
         </el-col>
-        <el-col v-bind="grid" class="ivu-mb">
-          <el-card :bordered="false">
-            <router-link :to="{ path: '/mall/coupons' }">
-              <Icon icon="ep:ticket" style="color: #b37feb" :size="35" />
-              <p>优惠券管理</p>
-            </router-link>
-          </el-card>
-        </el-col>
-        <el-col v-bind="grid" class="ivu-mb">
-          <el-card :bordered="false">
-            <router-link :to="{ path: '/shop/web-print' }">
-               <Icon icon="ep:postcard" style="color: #ffd666" :size="35" />
-              <p>打印机管理</p>
-            </router-link>
-          </el-card>
-        </el-col>
+      
         <el-col v-bind="grid" class="ivu-mb">
           <el-card :bordered="false">
             <router-link :to="{ path: '/mall/shop' }" >
@@ -49,22 +34,7 @@
             </router-link>
           </el-card>
         </el-col>
-        <el-col v-bind="grid" class="ivu-mb">
-          <el-card :bordered="false">
-            <router-link :to="{ path: '/pay/merchant-details' }">
-              <Icon icon="ep:money" style="color: #ff85c0" :size="35" />
-              <p>支付管理</p>
-            </router-link>
-          </el-card>
-        </el-col>
-        <el-col v-bind="grid" class="ivu-mb">
-          <el-card :bordered="false">
-            <router-link :to="{ path: '/message/wechat-template' }">
-              <Icon icon="ep:message" style="color: #ffc069" :size="35" />
-              <p>消息管理</p>
-            </router-link>
-          </el-card>
-        </el-col>
+  
       </el-row>
     </div>
 </template>
@@ -75,11 +45,11 @@ const { wsCache } = useCache()
 
 
 const grid =ref({
-  xl: 3,
-  lg: 3,
-  md: 6,
-  sm: 8,
-  xs: 8,
+  xl: 6,
+  lg: 12,
+  md: 12,
+  sm: 16,
+  xs: 16,
 })
 
 

@@ -106,10 +106,10 @@ onPullDownRefresh(() => {
 // 使用范围
 const typeInfo = (type) => {
 	if (type == 0) {
-		return '外卖和自取';
+		return '外卖和堂食';
 	}
 	if (type == 1) {
-		return '自取';
+		return '堂食';
 	}
 	if (type == 2) {
 		return '外卖';
@@ -126,11 +126,6 @@ const openDetailModal = (mycoupon, index) => {
 	couponIndex.value = index;
 	coupon.value = mycoupon;
 	detailModalVisible.value = true;
-}
-// 使用优惠券
-const useCouponWith = (mycoupon) => {
-	coupon.value = mycoupon;
-	useCoupon();
 }
 // 取消优惠券
 const cancelCoupon = () => {

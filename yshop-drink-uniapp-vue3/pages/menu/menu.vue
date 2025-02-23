@@ -39,7 +39,7 @@
 					</view>
 					<view class="right">
 						<view class="dinein" :class="{active: orderType == 'takein'}" @tap="takein">
-							<text>自取</text>
+							<text>堂食</text>
 						</view>
 						<view class="takeout" :class="{active: orderType == 'takeout'}" @tap="takout">
 							<text>外卖</text>

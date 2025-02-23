@@ -34,14 +34,6 @@
 			
 		</view>
 		<view class="buttom">
-			<view class="loginType">
-				<!-- #ifdef MP-WEIXIN -->
-				<button type="primary" size="default" class="login-btn" open-type="getPhoneNumber" @getphonenumber="loginForWechatMini">
-				<!-- 	<image src="/static/images/mine/wechat.png"></image> -->
-					手机号快捷登录
-				</button>
-				<!-- #endif -->
-			</view>
 			<view class="hint">
 			<!-- 	<label class="label"> -->
 					<radio value="isChecked" @tap.stop="onChange" />
@@ -171,6 +163,11 @@ const getCaptcha = async () => {
 
 // 验证码开始计时	
 const startCaptcha = () => {
+	uni.showToast({
+		title: '测试验证码为9999',
+		icon: 'none',
+		duration: 2000,
+	})
 	console.log('start')
 }
 // 验证码结束

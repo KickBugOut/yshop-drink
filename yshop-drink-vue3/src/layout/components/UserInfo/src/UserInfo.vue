@@ -30,10 +30,6 @@ const userName = computed(() => userStore.user.nickname ?? 'Admin')
 const lockStore = useLockStore()
 const getIsLock = computed(() => lockStore.getLockInfo?.isLock ?? false)
 const dialogVisible = ref<boolean>(false)
-const lockScreen = () => {
-  dialogVisible.value = true
-}
-
 const loginOut = async () => {
   try {
     await ElMessageBox.confirm(t('common.loginOutMessage'), t('common.reminder'), {
@@ -48,9 +44,6 @@ const loginOut = async () => {
 }
 const toProfile = async () => {
   push('/user/profile')
-}
-const toDocument = () => {
-  window.open('https://www.yixiang.co/')
 }
 </script>
 
@@ -68,14 +61,7 @@ const toDocument = () => {
           <Icon icon="ep:tools" />
           <div @click="toProfile">{{ t('common.profile') }}</div>
         </ElDropdownItem>
-        <ElDropdownItem>
-          <Icon icon="ep:menu" />
-          <div @click="toDocument">{{ t('common.document') }}</div>
-        </ElDropdownItem>
-        <ElDropdownItem divided>
-          <Icon icon="ep:lock" />
-          <div @click="lockScreen">{{ t('lock.lockScreen') }}</div>
-        </ElDropdownItem>
+      
         <ElDropdownItem divided @click="loginOut">
           <Icon icon="ep:switch-button" />
           <div>{{ t('common.loginOut') }}</div>

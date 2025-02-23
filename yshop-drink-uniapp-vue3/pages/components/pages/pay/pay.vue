@@ -11,7 +11,7 @@
 				<template v-if="store.distance > 0">
 					<list-cell class="location">
 						<view class="flex-fill d-flex justify-content-between align-items-center">
-							<view class="store-name flex-fill">{{ orderType == 'takeout' ? '外卖配送' : '点餐自取' }}</view>
+							<view class="store-name flex-fill">{{ orderType == 'takeout' ? '外卖配送' : '点餐堂食' }}</view>
 							<uv-switch activeColor="#09b4f1" v-model="active" @change="takout">
 							</uv-switch>
 						</view>
@@ -111,16 +111,7 @@
 						</view>
 					</list-cell>
 				</view>
-				<list-cell arrow @click="goToPackages">
-					<view class="flex-fill d-flex justify-content-between align-items-center">
-						<view class="text-color-base">优惠券</view>
-						<view v-if="coupons == 0" class="text-color-base">暂无可用</view>
-						<view v-else-if="coupon.title" class="text-color-danger">
-							{{ coupon.title }}(满{{ coupon.least }}减{{ coupon.value }})
-						</view>
-						<view v-else class="text-color-primary">可用优惠券{{ coupons }}张</view>
-					</view>
-				</list-cell>
+				
 				<list-cell last>
 					<view class="flex-fill d-flex justify-content-end align-items-center">
 						<view>
@@ -151,25 +142,6 @@
 						<view class="iconfont line-height-100 checkbox iconradio-button-off" v-else></view>
 					</view>
 				</list-cell>
-				<list-cell last>
-					<view class="d-flex align-items-center justify-content-between w-100" @click="setPayType('weixin')">
-						<view class="iconfont iconwxpay line-height-100 payment-icon" style="color: #7EB73A"></view>
-						<view class="flex-fill">微信支付</view>
-						<view class="iconfont line-height-100 checkbox checked iconradio-button-on" v-if="payType == 'weixin'">
-						</view>
-						<view class="iconfont line-height-100 checkbox iconradio-button-off" v-else></view>
-					</view>
-				</list-cell>
-				<!-- #ifdef H5 -->
-				<list-cell>
-					<view class="d-flex align-items-center justify-content-between w-100" @click="setPayType('alipay')">
-						<view class="iconfont-yshop icon-alipay line-height-100 payment-icon" style="color:#07b4fd" ></view>
-						<view class="flex-fill">支付宝</view>
-						<view class="iconfont line-height-100 checkbox checked iconradio-button-on" v-if="payType == 'alipay'" ></view>
-						<view class="iconfont line-height-100 checkbox iconradio-button-off" v-else ></view>     
-					</view>
-				</list-cell>
-				<!-- #endif -->
 			</view>
 			<!-- 支付方式 end -->
 			<!-- 备注 begin -->
@@ -260,7 +232,7 @@ const paramsTime = ref({
 	second: false
 })
 const defaultTime = ref('00:00')
-const takeinTIme = ref(false) // 到店自取时间selector
+const takeinTIme = ref(false) // 到店堂食时间selector
 const takeinRange = ref([{
 		name: '立即用餐',
 		value: 0
@@ -370,7 +342,7 @@ const setPayType = (paytype) => {
 	})
 }
 const getCoupons = async() => {
-	//0=通用,1=自取,2=外卖
+	//0=通用,1=堂食,2=外卖
 	let type = orderType.value == 'takein' ? 1 : 2;
 	let data = await couponCount({
 		shop_id: store.value.id ? store.value.id : 0,
@@ -409,11 +381,11 @@ const choiceTime = (value) => {
 const cancelTime = (value) => {
 	takeoutTIme.value = false;
 }
-// 到店自取-取消选择取餐时间
+// 到店堂食-取消选择堂食时间
 const takeinCancelTime = (value) => {
 	takeinTIme.value = false;
 }
-// 到店自取-选择取餐时间
+// 到店堂食-选择堂食时间
 const takeinConfirmTime = (value) => {
 	defaultSelector.value = value;
 }
@@ -427,7 +399,7 @@ const takout = (value) => {
 
 	// 如果存在优惠券看看需不需要清除
 	if (coupon.value.hasOwnProperty('type')) {
-		//0=通用,1=自取,2=外卖
+		//0=通用,1=堂食,2=外卖
 		if (coupon.value.type != 0) {
 			if (coupon.value.type == 1 && orderType.value == 'takeout') {
 				coupon.value = {};

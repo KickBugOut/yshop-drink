@@ -23,53 +23,27 @@
 	<view class="container">
 			<view class="banner">
 				<uv-swiper class="bg" height="300" imgMode="aspectFill" keyName="image" :list="listAds" indicatorMode="dot" indicatorStyle="bottom"></uv-swiper>
-				<view class="intro">
-					<view class="greet">您好，{{ isLogin ? member.nickname : '游客' }}</view>
-					<view class="note">java-springboot-意向点餐外卖系统</view>
-				</view>
+			
 			</view>
 			<view class="content">
+				<view class="intro" style="background: linear-gradient(to bottom, white, #17a2b8); padding: 10px; border-radius: 10px; text-align: left;">
+				    <view class="greet" style="font-weight: bold;color:black; font-family: 'Artistic', sans-serif;">
+				      您好，{{ isLogin ? member.nickname : '游客' }}
+				    </view>
+				    <view class="note" style="font-weight: bold; color: black; font-family: 'Artistic', sans-serif;">
+				      欢迎使用--曹氏鸭脖连锁店管理微信小程序-TIBET@2025
+				    </view>
+				  </view>
 				<view class="flex justify-between yshop-menu">
 					<view class="flex flex-column align-center yshop-menu-item "  @tap="takein">
 						<view><image src="/static/images/index002.png" mode="aspectFit" class="img-01"></image></view>
-						<view>自取</view>
+						<view>堂食</view>
 						<view class="font-small text-light-black">下单免排队</view>
 					</view>
 					<view class="flex flex-column align-center yshop-menu-item "  @tap="takeout">
 						<view><image src="/static/images/index003.png" mode="aspectFit" class="img-01"></image></view>
 						<view>外卖</view>
 						<view class="font-small text-light-black">美食送到家</view>
-					</view>
-				</view>
-				 <view class="info">
-					<view class="integral_section">
-						<view class="top">
-							<text class="title">我的卡券</text>
-							<text class="value">{{member.couponCount}}</text>
-						</view>
-						<view class="bottom">
-							可抵扣商品价格哦
-						</view>
-					</view>
-					<view class="qrcode_section" @tap="coupons">
-						去领个券
-				<!-- 		<view class="iconfont iconarrow-right"></view> -->
-				
-					</view>
-				</view> 
-				<view class="info">
-					<view class="integral_section" @tap="goScore">
-						<view class="top">
-							<text class="title">积分商城</text>
-						</view>
-						<view class="bottom">
-							进入积分商城兑换奈雪券及周边好礼
-						<!-- 	<view class="iconfont iconarrow-right"></view> -->
-						</view>
-					</view>
-					<view class="qrcode_section" @tap="goScore">
-						<image src="/static/images/jifen.png"></image>
-						<text>逛一逛</text>
 					</view>
 				</view>
 				
@@ -182,6 +156,7 @@ onLoad(() => {
 }
 	
 	
+	
 /* #ifdef H5 */
 page {
 	height: auto;
@@ -211,7 +186,7 @@ page {
 		
 		.greet {
 			font-size: $font-size-lg;
-			margin-bottom: 10rpx;
+			margin-bottom: 1rpx;
 		}
 		
 		.note {

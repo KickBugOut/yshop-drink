@@ -95,7 +95,7 @@
           <span>
             <el-tag class="ml-2" type="danger" v-if="scope.row.orderType=='desk'">堂食</el-tag>
             <el-tag class="ml-2" type="danger" v-if="scope.row.orderType=='takeout'">外卖</el-tag>
-            <el-tag class="ml-2" type="danger" v-if="scope.row.orderType=='takein'">自取</el-tag>
+            <el-tag class="ml-2" type="danger" v-if="scope.row.orderType=='takein'">堂食</el-tag>
            {{ scope.row.orderId }}</span>
         </template>
       </el-table-column>
@@ -140,7 +140,7 @@
       <el-table-column label="购买类型" align="center">
         <template #default="scope">
            <span v-if="scope.row.orderType=='takeout'">外卖</span>
-           <span v-if="scope.row.orderType=='takein'">自取</span>
+           <span v-if="scope.row.orderType=='takein'">堂食</span>
         </template>
       </el-table-column>
       <el-table-column

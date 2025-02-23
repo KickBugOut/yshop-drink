@@ -23,7 +23,7 @@
       <el-form-item label="可用类型" prop="type">
         <el-radio-group v-model="formData.type">
           <el-radio :label="0">通用</el-radio>
-          <el-radio :label="1">自取</el-radio>
+          <el-radio :label="1">堂食</el-radio>
           <el-radio :label="2">外卖</el-radio>
         </el-radio-group>
       </el-form-item>

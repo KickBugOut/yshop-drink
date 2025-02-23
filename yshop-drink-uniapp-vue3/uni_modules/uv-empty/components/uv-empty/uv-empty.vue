@@ -66,7 +66,6 @@
 					address: '没有收货地址',
 					'wifi-off': '没有WiFi',
 					order: '订单为空',
-					coupon: '没有优惠券',
 					favor: '暂无收藏',
 					permission: '无权限',
 					history: '无历史记录',

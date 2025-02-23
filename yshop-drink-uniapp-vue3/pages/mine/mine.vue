@@ -27,18 +27,7 @@
 					</view>
 					<!-- user grid begin -->
 					<view class="w-100 d-flex align-items-center just-content-center">
-						<view class="user-grid" @tap="serv({type:'pages',pages:'/pages/components/pages/coupons/coupons'})">
-							<view class="value font-size-extra-lg font-weight-bold text-color-base">
-								{{ isLogin ? member.couponCount : 0}}
-							</view>
-							<view class="font-size-sm text-color-assist">优惠券</view>
-						</view>
-						<view class="user-grid"  @tap="serv({type:'pages', pages: '/pages/components/pages/balance/bill?cate=1'})">
-							<view class="value font-size-extra-lg font-weight-bold text-color-base">
-								{{ isLogin ? member.integral : 0 }}
-							</view>
-							<view class="font-size-sm text-color-assist">积分</view>
-						</view>
+						
 						<view class="user-grid">
 							<view class="value font-size-extra-lg font-weight-bold text-color-base">
 								{{ isLogin ? member.nowMoney : 0 }}

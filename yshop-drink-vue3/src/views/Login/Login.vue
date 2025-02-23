@@ -9,8 +9,8 @@
       >
         <!-- 左上角的 logo + 系统标题 -->
         <div class="flex items-center relative text-white">
-          <img alt="" class="w-48px h-48px mr-10px" src="@/assets/imgs/logo.png" />
-          <span class="text-20px font-bold">{{ underlineToHump(appStore.getTitle) }}</span>
+          <img alt="" class="w-48px h-48px mr-20px" src="@/assets/imgs/logo.png" />
+          <span class="text-30px font-bold">{{ underlineToHump(appStore.getTitle) }}</span>
         </div>
         <!-- 左边的背景图 + 欢迎语 -->
         <div class="flex justify-center items-center h-[calc(100%-60px)]">
@@ -30,10 +30,10 @@
       <div class="flex-1 p-30px <sm:p-10px dark:bg-v-dark relative">
         <!-- 右上角的主题、语言选择 -->
         <div class="flex justify-between items-center text-white @2xl:justify-end @xl:justify-end">
-          <div class="flex items-center @2xl:hidden @xl:hidden">
-            <img alt="" class="w-48px h-48px mr-10px" src="@/assets/imgs/logo.png" />
-            <span class="text-20px font-bold">{{ underlineToHump(appStore.getTitle) }}</span>
-          </div>
+          <!-- <div class="flex items-center @2xl:hidden @xl:hidden">
+            <img alt="" class="w-48px h-48px mr-10px" src="@/assets/imgs/logo.png"  />
+            <span class="text-30px font-bold">{{ underlineToHump(appStore.getTitle) }}</span>
+          </div> -->
           <div class="flex justify-end items-center space-x-10px">
             <!-- <ThemeSwitch /> -->
             <!-- <LocaleDropdown class="<xl:text-white dark:text-white" /> -->

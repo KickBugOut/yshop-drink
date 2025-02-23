@@ -52,7 +52,7 @@
       <el-table-column label="优惠券金额" align="center" prop="value"  width="150"/>
       <el-table-column label="可用类型" align="center" prop="type">
         <template #default="scope">
-          <span v-if="scope.row.type == 1">自取</span>
+          <span v-if="scope.row.type == 1">堂食</span>
           <span v-if="scope.row.type == 0">外卖</span>
           <span v-else>通用</span>
          </template>
