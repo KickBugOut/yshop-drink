@@ -61,7 +61,7 @@ spring:
       host: 127.0.0.1 # 地址
       port: 6379 # 端口
       database: 0 # 数据库索引
-#    password: dev # 密码，建议生产环境开启
+      password: redis # 密码，建议生产环境开启
 
 --- #################### 定时任务相关配置 ####################
 
@@ -177,8 +177,8 @@ wx:
       key-prefix: wx # Redis Key 的前缀
       http-client-type: HttpClient # 采用 HttpClient 请求微信公众号平台
   miniapp: # 小程序配置（必填），参见 https://github.com/Wechat-Group/WxJava/blob/develop/spring-boot-starters/wx-java-miniapp-spring-boot-starter/README.md 文档
-    appid: wx001e2dc50bf532df # wenhualian的接口测试号
-    secret: d22aa6a98472ae0b5ee6dd9b7807520c
+    appid: wxc152657c9dce9822 # wenhualian的接口测试号
+    secret: 9da7d3769102c4e688f8226fe4d53316
     config-storage:
       type: RedisTemplate # 采用 RedisTemplate 操作 Redis，会自动从 Spring 中获取
       key-prefix: wa # Redis Key 的前缀

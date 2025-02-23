@@ -223,6 +223,7 @@ public class MemberAuthServiceImpl implements MemberAuthService {
 
         } catch (WxErrorException e) {
             log.error(e.getMessage());
+            log.error("error log 1");
             throw exception(MINI_AUTH_LOGIN_BAD);
         }
     }
@@ -303,6 +304,7 @@ public class MemberAuthServiceImpl implements MemberAuthService {
             }
         }catch (WxErrorException e) {
             log.error(e.getMessage());
+            log.error("error log 2");
             throw exception(MINI_AUTH_LOGIN_BAD);
         }
 

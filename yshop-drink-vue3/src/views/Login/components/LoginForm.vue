@@ -124,7 +124,8 @@ const loginData = reactive({
     tenantName: 'yshop',
     //username: 'yshop002',
     //password: '123456789',
-    username: 'admin',
+     username: 'admin',
+    //username: import.meta.env.VITE_APP_BAIDU_CODE,
     password: 'admin123',
     captchaVerification: '',
     rememberMe: false
